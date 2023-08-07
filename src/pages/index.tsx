@@ -11,6 +11,8 @@ export default function Home() {
     <div>
       <h1>Agent</h1>
       <ConnectWallet />
+      <a href="/api/auth/login">Login</a>
+      <a href="/api/auth/logout">Logout</a>
       {data && (
         <div>
           {/* <h3>{data.metadata.name}</h3>
