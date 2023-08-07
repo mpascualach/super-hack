@@ -13,9 +13,9 @@ export default function Home() {
       <ConnectWallet />
       {data && (
         <div>
-          <h3>{data.metadata.name}</h3>
+          {/* <h3>{data.metadata.name}</h3>
           <p>{data.metadata.description}</p>
-          <p>Owned by: {data.nft.owner.address}</p>
+          <p>Owned by: {data.nft.owner.address}</p> */}
         </div>
       )}
     </div>
