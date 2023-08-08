@@ -13,7 +13,7 @@ export default function Home() {
     <Layout>
       <h1>Agent</h1>
       <a href="/api/auth/login">Login</a>
-      <a href="/api/auth/logout">Logout</a>
+
       {data && (
         <div>
           {/* <h3>{data.metadata.name}</h3>

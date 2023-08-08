@@ -15,7 +15,7 @@ const Navbar = () => {
   }, [pathname]);
 
   return (
-    <div className="navbar bg-base-100 h-[88px] padding-auto px-[40px] border-b-2 border-[#373F41]">
+    <div className="navbar bg-base-100 h-[88px] padding-auto px-[40px] ">
       <div className="navbar-start">
         <Link href="/">
           <img src="/eigen-logo.svg" className="h-[37px] w-[36px]" alt="" />
@@ -23,7 +23,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center"></div>
       <div className="navbar-end">
-        <div className="flex flex-row gap-[48px] text-[20px]">
+        <div className="flex flex-row gap-[48px] text-[20px] text-[#699BF7]">
           <Link href="/explore">
             <span
               className={`text-${
@@ -52,16 +52,17 @@ const Navbar = () => {
             </span>
           </Link>
         </div>
-        {!address ? (
-          <></>
-        ) : (
-          <img
-            src="/address.svg"
-            className="rounded-full border-black border-[1px] mx-[10px]"
-            alt=""
-          />
-        )}
-        <ConnectWallet theme="light" />
+        <details className="dropdown dropdown-end">
+          <summary className="m-1 btn text-black">DUde</summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li>
+              <ConnectWallet theme="light" />
+            </li>
+            <li>
+              <a href="/api/auth/logout">Logout</a>
+            </li>
+          </ul>
+        </details>
       </div>
     </div>
   );
