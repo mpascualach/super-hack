@@ -3,7 +3,7 @@ import Navbar from "../Navbar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="text-black">
       <Navbar />
       <div className="px-[48px] py-[32px]">{children}</div>
     </div>
