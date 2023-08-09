@@ -25,11 +25,11 @@ const Create = () => {
         </div>
 
         {currentStep === 1 && (
-          <div className="flex flex-row mt-[58px]">
+          <div className="flex flex-row mt-[58px] gap-[142px]">
             <div className="flex flex-col gap-[45px]">
               <p className="text-[32px] ">About your project</p>
 
-              <div className="flex flex-col gap-[24px] bg-[#f8f8f8] py-[48px] px-[24px] rounded-[15px]">
+              <div className="relative flex flex-col gap-[24px] bg-[#f8f8f8] pt-[48px] px-[24px] rounded-[15px]">
                 <div className="form-control w-full">
                   <label className="label">
                     <span className="label-text text-black text-[24px] mb-[8px]">
@@ -101,7 +101,7 @@ const Create = () => {
                     </button>
                   </div>
                 </div>
-                <div className="form-control w-full">
+                <div className="form-control w-full mb-[120px]">
                   <label className="label">
                     <span className="label-text text-black text-[24px] mb-[8px]">
                       Import theme
@@ -113,10 +113,16 @@ const Create = () => {
                     <Colorpicker />
                   </div>
                 </div>
+
+                <div
+                  className="absolute flex flex-row items-center justify-center bottom-0 left-0 right-0  w-full h-[60px] bg-[#699BF7] font-bold text-white text-[24px] rounded-[15px] cursor-pointer"
+                  onClick={handleNext}
+                >
+                  CONFIRM
+                </div>
               </div>
             </div>
-
-            <button onClick={handleNext}>next</button>
+            <div>image</div>
           </div>
         )}
 
