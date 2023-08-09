@@ -9,4 +9,16 @@ module.exports = {
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        normal: {
+          accent: "#699BF7",
+        },
+        chat: {
+          accent: "#262626",
+        },
+      },
+    ],
+  },
 };

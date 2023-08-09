@@ -5,6 +5,7 @@ import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
+  const [theme, setTheme] = useState("normal"); // Initialize theme state to "normal"
   const pathname = usePathname();
 
   const address = useAddress();
@@ -12,10 +13,20 @@ const Navbar = () => {
   useEffect(() => {
     setActive(pathname);
     console.log(pathname);
+
+    // Set theme based on pathname
+    if (pathname === "/chat") {
+      setTheme("chat");
+    } else {
+      setTheme("normal");
+    }
   }, [pathname]);
 
   return (
-    <div className="navbar bg-base-100 h-[88px] padding-auto px-[40px] ">
+    <div
+      data-theme={theme} // Use the theme state here
+      className="navbar bg-accent h-[88px] padding-auto px-[40px]"
+    >
       <div className="navbar-start">
         <Link href="/">
           <img src="/eigen-logo.svg" className="h-[37px] w-[36px]" alt="" />
@@ -23,11 +34,11 @@ const Navbar = () => {
       </div>
       <div className="navbar-center"></div>
       <div className="navbar-end">
-        <div className="flex flex-row gap-[48px] text-[20px] text-[#699BF7]">
+        <div className="flex flex-row gap-[48px] text-[20px] text-[#fff]">
           <Link href="/explore">
             <span
               className={`text-${
-                active === "/explore" ? "gray-500 font-bold" : "[#699BF7]"
+                active === "/explore" ? "gray-500 font-bold" : "[#fff]"
               }`}
             >
               eXPLORE
