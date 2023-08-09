@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/UI/Layout";
 import InfoSection from "../components/Sections/InfoSection";
+import ChooseTemplate from "../components/Sections/ChooseTemplate";
 
 const Create = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -23,11 +24,15 @@ const Create = () => {
           </ul>
         </div>
 
-        {currentStep === 1 && <InfoSection handleNext={handleNext} />}
+        {currentStep === 1 && (
+          <div>
+            <ChooseTemplate handleNext={handleNext} />
+          </div>
+        )}
 
         {currentStep === 2 && (
           <div>
-            hello 2 <button onClick={handleNext}>next</button>
+            <InfoSection handleNext={handleNext} />
           </div>
         )}
 
