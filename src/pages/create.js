@@ -7,7 +7,7 @@ const Create = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleNext = () => {
-    if (currentStep < 3) {
+    if (currentStep < 4) {
       setCurrentStep((prevStep) => prevStep + 1);
     }
   };
@@ -17,10 +17,24 @@ const Create = () => {
       <div>
         <div className="text-[16px] breadcrumbs">
           <ul>
-            <li>Choose templates</li>
-            <li>Import theme</li>
-            <li>Customise templates</li>
-            <li>Preview</li>
+            {[
+              "Choose templates",
+              "About your project",
+              "Customise templates",
+              "Attestation & Pay",
+            ].map((step, index) => (
+              <li
+                key={index}
+                className={`cursor-pointer ${
+                  currentStep === index + 1
+                    ? "text-black"
+                    : "text-black opacity-40"
+                }`}
+                onClick={() => setCurrentStep(index + 1)}
+              >
+                {step}
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -36,7 +50,12 @@ const Create = () => {
           </div>
         )}
 
-        {currentStep === 3 && <div>hello 3</div>}
+        {currentStep === 3 && (
+          <div>
+            hello 3 <button onClick={handleNext}>next</button>
+          </div>
+        )}
+        {currentStep === 4 && <div>Pay and Attestation</div>}
       </div>
     </Layout>
   );
