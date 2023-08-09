@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/UI/Layout";
 import InfoSection from "../components/Sections/InfoSection";
 import ChooseTemplate from "../components/Sections/ChooseTemplate";
+import Customise from "../components/Sections/Customise";
 
 const Create = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -52,7 +53,7 @@ const Create = () => {
 
         {currentStep === 3 && (
           <div>
-            hello 3 <button onClick={handleNext}>next</button>
+            <Customise handleNext={handleNext} />
           </div>
         )}
         {currentStep === 4 && <div>Pay and Attestation</div>}
