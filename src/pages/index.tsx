@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import { ConnectWallet } from "@thirdweb-dev/react";
 import { useNFT, useNFTMetadata } from "@zoralabs/nft-hooks";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/UI/Navbar";
 import Layout from "../components/UI/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
