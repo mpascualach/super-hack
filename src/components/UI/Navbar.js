@@ -2,6 +2,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import EcoSelect from "../Custom/EcoSelect";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
@@ -34,7 +35,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-center"></div>
       <div className="navbar-end flex flex-row gap-[48px]">
-        <div className="flex flex-row gap-[32px] text-[20px] text-[#fff]">
+        <div className="flex flex-row gap-[32px] text-[20px] text-[#fff] items-center">
           <Link href="/chat">
             <span
               className={`text-${
@@ -53,15 +54,7 @@ const Navbar = () => {
               CREATE
             </span>
           </Link>
-          <Link href="/generate">
-            <span
-              className={`text-${
-                active === "/generate" ? "gray-500 font-bold" : "base-500"
-              }`}
-            >
-              DASHBOARD
-            </span>
-          </Link>
+          <EcoSelect />
         </div>
         <details className="dropdown dropdown-end">
           <summary
