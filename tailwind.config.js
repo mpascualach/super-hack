@@ -14,9 +14,11 @@ module.exports = {
       {
         normal: {
           accent: "#699BF7",
+          background: "#FFFFFF",
         },
         chat: {
           accent: "#262626",
+          background: "#262626",
         },
       },
     ],
