@@ -4,9 +4,19 @@ import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 const SidePanel = () => {
   const { ecosystem } = useContext(EcoSystemContext);
   console.log(ecosystem);
+
+  const colors = {
+    optimism: "bg-gray-custom",
+    base: "bg-[#0052FE]",
+    zora: "bg-[#909090]",
+    mode: "bg-[#DFFE00]",
+  };
+
   return (
     <div className="flex flex-col gap-[24px]">
-      <div className="bg-accent h-[180px] w-[558px] rounded-[20px]">
+      <div
+        className={`${colors[ecosystem]}  h-[180px] w-[558px] rounded-[20px]`}
+      >
         <div className="flex flex-row pl-[24px] pt-[44px] pr-[32px] justify-between">
           <div className="flex flex-col gap-[9px] ">
             <svg
@@ -23,7 +33,9 @@ const SidePanel = () => {
           <img className="h-[92px] w-[92px]" src="/cats/cat1.svg" alt="" />
         </div>
       </div>
-      <div className="bg-gray-custom h-[180px] w-[558px] rounded-[20px]">
+      <div
+        className={`${colors[ecosystem]}  h-[180px] w-[558px] rounded-[20px]`}
+      >
         <div className="flex flex-row pl-[24px] pt-[44px] pr-[32px] justify-between">
           <div className="flex flex-col gap-[9px] ">
             <svg
@@ -40,7 +52,9 @@ const SidePanel = () => {
           <img className="h-[92px] w-[92px]" src="/cats/cat2.svg" alt="" />
         </div>
       </div>
-      <div className="bg-gray-custom h-[180px] w-[558px] rounded-[20px]">
+      <div
+        className={`${colors[ecosystem]}  h-[180px] w-[558px] rounded-[20px]`}
+      >
         <div className="flex flex-row pl-[24px] pt-[44px] pr-[32px] justify-between">
           <div className="flex flex-col gap-[9px] ">
             <svg
@@ -59,7 +73,9 @@ const SidePanel = () => {
           <img className="h-[92px] w-[92px]" src="/cats/cat3.svg" alt="" />
         </div>
       </div>
-      <div className="bg-gray-custom h-[120px] w-[558px] rounded-[20px]">
+      <div
+        className={`${colors[ecosystem]}  h-[180px] w-[558px] rounded-[20px]`}
+      >
         <div className="flex flex-row pl-[24px] pt-[28px] pr-[32px] justify-between">
           <div className="flex flex-col gap-[9px] ">
             <svg

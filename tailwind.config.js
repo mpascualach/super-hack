@@ -24,16 +24,6 @@ module.exports = {
           accent: "#262626",
           background: "#262626",
         },
-        optimism: {
-          accent: "#393939",
-        },
-        base: {
-          accent: "#699BF7",
-        },
-        zora: {},
-        mode: {
-          accent: "#DFFE00",
-        },
       },
     ],
   },
