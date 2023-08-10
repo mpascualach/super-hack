@@ -33,15 +33,15 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center"></div>
-      <div className="navbar-end">
-        <div className="flex flex-row gap-[48px] text-[20px] text-[#fff]">
+      <div className="navbar-end flex flex-row gap-[48px]">
+        <div className="flex flex-row gap-[32px] text-[20px] text-[#fff]">
           <Link href="/explore">
             <span
               className={`text-${
                 active === "/explore" ? "gray-500 font-bold" : "[#fff]"
               }`}
             >
-              eXPLORE
+              EXPLORE
             </span>
           </Link>
           <Link href="/create">
@@ -50,7 +50,7 @@ const Navbar = () => {
                 active === "/create" ? "gray-500 font-bold" : ""
               }`}
             >
-              cREATE
+              CREATE
             </span>
           </Link>
           <Link href="/generate">
@@ -59,15 +59,25 @@ const Navbar = () => {
                 active === "/generate" ? "gray-500 font-bold" : "base-500"
               }`}
             >
-              dASHBOARD
+              DASHBOARD
             </span>
           </Link>
         </div>
         <details className="dropdown dropdown-end">
-          <summary className="m-1 btn text-black">DUde</summary>
-          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+          <summary
+            tabIndex={0}
+            className="flex flex-row items-center gap-[9px] m-[10px] cursor-pointer"
+          >
+            <div className="h-[56px] w-[56px] border avatar rounded-full flex flex-col items-center justify-center">
+              <img src="/dude.svg" alt="" />
+            </div>
+          </summary>
+          <ul
+            tabIndex={0}
+            className="dropdown-content z-[1] menu p-2 shadow bg-[#f5f5f5] rounded-[18px] w-[250px] "
+          >
             <li>
-              <ConnectWallet theme="light" />
+              <ConnectWallet />
             </li>
             <li>
               <a href="/api/auth/logout">Logout</a>
