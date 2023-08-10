@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TemplatePreview from "../Custom/TemplatePreview";
 
 const Customise = () => {
   const [inputFields, setInputFields] = useState([1]);
@@ -9,7 +10,7 @@ const Customise = () => {
 
   return (
     <div className="mt-[24px]">
-      <div className="flex flex-row w-full bg-[#F8F8F8] rounded-[15px] px-[24px] py-[32px] h-[704px]">
+      <div className="flex flex-row gap-[46px] w-full bg-[#F8F8F8] rounded-[15px] px-[24px] py-[32px] h-[704px]">
         <div className="flex flex-col gap-[32px] overflow-scroll hide-scrollbar">
           <p className="text-[28px]">NFT Template / Buy</p>
           <div className="form-control w-full">
@@ -95,6 +96,7 @@ const Customise = () => {
             />
           </div>
         </div>
+        <TemplatePreview />
       </div>
     </div>
   );
