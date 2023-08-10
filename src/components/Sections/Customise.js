@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TemplatePreview from "../Custom/TemplatePreview";
 
-const Customise = () => {
+const Customise = ({ handleNext }) => {
   const [inputFields, setInputFields] = useState([1]);
 
   const handleAddInput = () => {
@@ -97,6 +97,22 @@ const Customise = () => {
           </div>
         </div>
         <TemplatePreview />
+      </div>
+      <div className="flex flex-row justify-between items-center mt-[48px]">
+        <div className="flex flex-row gap-[24px]">
+          <span className="text-[32px] font-bold border-t-4 text-[#699BF7] border-[#699BF7]">
+            Buy nft
+          </span>
+          <span className="text-[32px] font-bold border-t-4  border-[#fff] text-[#699BF7] text-opacity-60 ">
+            Deploy contract
+          </span>
+        </div>
+        <div
+          className=" flex flex-row items-center justify-center w-[236px] h-[60px] bg-[#699BF7] font-bold text-white text-[24px] rounded-[15px] cursor-pointer"
+          onClick={handleNext}
+        >
+          CONFIRM
+        </div>
       </div>
     </div>
   );
