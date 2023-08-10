@@ -3,7 +3,7 @@ import React from "react";
 const Step1 = () => {
   return (
     <div className="flex flex-col h-[539px] gap-[24px] items-center justify-center">
-      <img className="w-[51px]" src="/loader.svg" alt="" />
+      <img className="w-[51px] animate-bounce" src="/loader.svg" alt="" />
       <p className="w-[505px] text-[24px] text-center">
         Okay understood, what categories of NFT do you want to buy?
       </p>
