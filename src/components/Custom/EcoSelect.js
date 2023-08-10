@@ -1,12 +1,16 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
+import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const EcoSelect = () => {
   const [selectedImage, setSelectedImage] = useState("/logos/optimism.svg");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
-  const handleChange = (image) => {
+  const { setEcosystem } = useContext(EcoSystemContext);
+
+  const handleChange = (image, ecosystemName) => {
     setSelectedImage(image);
+    setEcosystem(ecosystemName);
     setIsOpen(false);
   };
 
@@ -32,7 +36,9 @@ const EcoSelect = () => {
           className="flex flex-col gap-[12px] absolute w-[188px] border p-[12px] rounded-[10px] bg-white mt-[12px] shadow-lg"
         >
           <li className="cursor-pointer">
-            <button onClick={() => handleChange("/logos/optimism.svg")}>
+            <button
+              onClick={() => handleChange("/logos/optimism.svg", "optimism")}
+            >
               <img
                 src="/logos/optimism.svg"
                 alt="Option 1"
@@ -41,7 +47,7 @@ const EcoSelect = () => {
             </button>
           </li>
           <li className="cursor-pointer">
-            <button onClick={() => handleChange("/logos/base.svg")}>
+            <button onClick={() => handleChange("/logos/base.svg", "base")}>
               <img
                 src="/logos/base.svg"
                 alt="Option 2"
@@ -50,19 +56,19 @@ const EcoSelect = () => {
             </button>
           </li>
           <li className="cursor-pointer">
-            <button onClick={() => handleChange("/logos/zora.svg")}>
+            <button onClick={() => handleChange("/logos/zora.svg", "zora")}>
               <img
                 src="/logos/zora.svg"
-                alt="Option 2"
+                alt="Option 3"
                 className="w-[188px] h-[48px]"
               />
             </button>
           </li>
           <li className="cursor-pointer">
-            <button onClick={() => handleChange("/logos/mode.svg")}>
+            <button onClick={() => handleChange("/logos/mode.svg", "mode")}>
               <img
                 src="/logos/mode.svg"
-                alt="Option 2"
+                alt="Option 4"
                 className="w-[188px] h-[48px]"
               />
             </button>

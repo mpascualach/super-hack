@@ -6,7 +6,7 @@ import EcoSelect from "../Custom/EcoSelect";
 
 const Navbar = () => {
   const [active, setActive] = useState("");
-  const [theme, setTheme] = useState("normal"); // Initialize theme state to "normal"
+  const [theme, setTheme] = useState("normal");
   const pathname = usePathname();
 
   const address = useAddress();

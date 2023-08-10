@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const SidePanel = () => {
+  const { ecosystem } = useContext(EcoSystemContext);
+  console.log(ecosystem);
   return (
     <div className="flex flex-col gap-[24px]">
-      <div className="bg-gray-custom h-[180px] w-[558px] rounded-[20px]">
+      <div className="bg-accent h-[180px] w-[558px] rounded-[20px]">
         <div className="flex flex-row pl-[24px] pt-[44px] pr-[32px] justify-between">
           <div className="flex flex-col gap-[9px] ">
             <svg
