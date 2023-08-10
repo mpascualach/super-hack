@@ -35,13 +35,13 @@ const Navbar = () => {
       <div className="navbar-center"></div>
       <div className="navbar-end flex flex-row gap-[48px]">
         <div className="flex flex-row gap-[32px] text-[20px] text-[#fff]">
-          <Link href="/explore">
+          <Link href="/chat">
             <span
               className={`text-${
-                active === "/explore" ? "gray-500 font-bold" : "[#fff]"
+                active === "/chat" ? "gray-500 font-bold" : "[#fff]"
               }`}
             >
-              EXPLORE
+              CHAT
             </span>
           </Link>
           <Link href="/create">
