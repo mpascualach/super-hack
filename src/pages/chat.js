@@ -2,6 +2,7 @@ import React from "react";
 import Layout from "../components/UI/Layout";
 import SidePanel from "../components/UI/SidePanel";
 import TemplateHolder from "../components/UI/TemplateHolder";
+import Loader from "../components/Custom/Loader";
 
 const chat = () => {
   return (
@@ -22,6 +23,7 @@ const chat = () => {
               Animi, a. Voluptates quos mollitia rerum velit, necessitatibus
               incidunt est nostrum fuga.
             </p>
+            <Loader />
           </TemplateHolder>
         </div>
         <SidePanel />
