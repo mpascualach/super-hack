@@ -22,18 +22,29 @@ const EcoSelect = () => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="h-[48px] rounded-[10px] bg-white focus:outline-none"
+        className="flex flex-row items-center gap-[4px] h-[60px] w-[100px] rounded-[10px] bg-transparent border border-[#D9D9D9CC] focus:outline-none px-[12px]"
       >
-        <img
-          src={selectedImage}
-          alt="Selected"
-          className="w-[188px] h-[20px]"
-        />
+        <img src={selectedImage} alt="Selected" className="w-[48px] h-[48px]" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M6 9L12 15L18 9"
+            stroke="#D9D9D9"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
       </button>
       {isOpen && (
         <ul
           ref={dropdownRef}
-          className="flex flex-col gap-[12px] absolute w-[188px] border p-[12px] rounded-[10px] bg-white mt-[12px] shadow-lg"
+          className="flex flex-col gap-[12px] absolute w-[100px] items-center  border p-[12px] rounded-[10px] bg-white mt-[12px] shadow-lg"
         >
           <li className="cursor-pointer">
             <button
@@ -42,7 +53,7 @@ const EcoSelect = () => {
               <img
                 src="/logos/optimism.svg"
                 alt="Option 1"
-                className="w-[188px] h-[48px]"
+                className="w-[48px] h-[48px]"
               />
             </button>
           </li>
@@ -51,7 +62,7 @@ const EcoSelect = () => {
               <img
                 src="/logos/base.svg"
                 alt="Option 2"
-                className="w-[188px] h-[48px]"
+                className="w-[48px] h-[48px]"
               />
             </button>
           </li>
@@ -60,7 +71,7 @@ const EcoSelect = () => {
               <img
                 src="/logos/zora.svg"
                 alt="Option 3"
-                className="w-[188px] h-[48px]"
+                className="w-[48px] h-[48px]"
               />
             </button>
           </li>
@@ -69,7 +80,7 @@ const EcoSelect = () => {
               <img
                 src="/logos/mode.svg"
                 alt="Option 4"
-                className="w-[188px] h-[48px]"
+                className="w-[48px] h-[48px]"
               />
             </button>
           </li>
