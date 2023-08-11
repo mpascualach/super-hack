@@ -1,6 +1,7 @@
 import React from "react";
 import Layout from "../components/UI/Layout";
 import SidePanel from "../components/UI/SidePanel";
+import TemplateHolder from "../components/UI/TemplateHolder";
 
 const chat = () => {
   return (
@@ -14,6 +15,14 @@ const chat = () => {
             id=""
             rows="2"
           ></textarea>
+          <TemplateHolder title="Templates">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro
+              quis voluptates dolorem optio ipsa aut quaerat nihil aliquam!
+              Animi, a. Voluptates quos mollitia rerum velit, necessitatibus
+              incidunt est nostrum fuga.
+            </p>
+          </TemplateHolder>
         </div>
         <SidePanel />
       </div>
