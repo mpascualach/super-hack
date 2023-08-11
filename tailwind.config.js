@@ -10,6 +10,9 @@ module.exports = {
       backgroundColor: {
         "gray-custom": "rgba(57, 57, 57, 0.38)",
       },
+      lineHeight: {
+        "28px": "28px",
+      },
     },
   },
   plugins: [require("daisyui")],

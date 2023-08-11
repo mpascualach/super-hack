@@ -3,6 +3,7 @@ import Layout from "../components/UI/Layout";
 import InfoSection from "../components/Sections/InfoSection";
 import ChooseTemplate from "../components/Sections/ChooseTemplate";
 import Customise from "../components/Sections/Customise";
+import Pay from "../components/Sections/Pay";
 
 const Create = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -56,7 +57,7 @@ const Create = () => {
             <Customise handleNext={handleNext} />
           </div>
         )}
-        {currentStep === 4 && <div>Pay and Attestation</div>}
+        {currentStep === 4 && <Pay />}
       </div>
     </Layout>
   );
