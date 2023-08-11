@@ -44,7 +44,7 @@ const EcoSelect = () => {
       {isOpen && (
         <ul
           ref={dropdownRef}
-          className="flex flex-col gap-[12px] absolute w-[100px] items-center  border p-[12px] rounded-[10px] bg-white mt-[12px] shadow-lg"
+          className="z-100 flex flex-col gap-[12px] absolute w-[100px] items-center  border p-[12px] rounded-[10px] bg-white mt-[12px] shadow-lg"
         >
           <li className="cursor-pointer">
             <button
