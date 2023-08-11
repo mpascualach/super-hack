@@ -18,7 +18,7 @@ const chat = () => {
             id=""
             rows="2"
           ></textarea>
-          <Guide />
+          <Create />
         </div>
         <SidePanel />
       </div>
