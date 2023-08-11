@@ -59,7 +59,7 @@ const Create = () => {
             </select>
           </div>
           <button
-            className="w-[545px] h-[60px] bg-[#262626] text-white rounded-[8px] mt-[105px]"
+            className="w-[545px] h-[60px] bg-[#262626] text-white rounded-[8px] mt-[105px] font-bold"
             onClick={handleGenerate}
           >
             GENERATE
@@ -79,27 +79,20 @@ const Create = () => {
               </div>
             ) : (
               <div className="flex flex-col justify-between h-[450px] py-[24px] ">
-                <div className="flex flex-row gap-[62px]">
+                <div className="flex flex-col ">
                   <img
-                    className="h-[205px] w-[205px]"
+                    className="h-[274px] w-[544px]"
                     src="/images/nft.png"
                     alt=""
                   />
-                  <div className="flex flex-col">
-                    <p className="text-[20px] font-bold mt-[20px]">
-                      London Scene
-                    </p>
-                    <p className="flex flex-row gap-[8px] items-center text-[12px]">
-                      <img className="h-[16px]" src="/zora.svg" alt="" />
-                      <span className="text-[18px] ">0.01 ETH</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-row justify-between">
-                  <button className="w-[184px] h-[60px] border border-black rounded-[8px] text-[20px] font-bold ">
-                    REDO
-                  </button>
-                  <button className="w-[184px] h-[60px] bg-[#262626] text-white text-[20px] font-bold rounded-[8px]  ">
+                  <p className="text-[20px] font-bold text-[#262626]">
+                    London Scene
+                  </p>
+                  <p className="flex flex-row gap-[8px] items-center text-[12px]">
+                    <img className="h-[16px]" src="/zora.svg" alt="" />
+                    <span className="text-[18px] ">0.01 ETH</span>
+                  </p>
+                  <button className="w-[545px] h-[60px] bg-[#262626] text-white rounded-[8px] mt-[38px] font-bold">
                     MINT
                   </button>
                 </div>
