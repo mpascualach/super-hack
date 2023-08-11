@@ -4,6 +4,7 @@ import SidePanel from "../components/UI/SidePanel";
 import TemplateHolder from "../components/UI/TemplateHolder";
 import Loader from "../components/Custom/Loader";
 import Create from "../components/Templates/Create";
+import Guide from "../components/Templates/Guide";
 
 const chat = () => {
   return (
@@ -17,7 +18,7 @@ const chat = () => {
             id=""
             rows="2"
           ></textarea>
-          <Create />
+          <Guide />
         </div>
         <SidePanel />
       </div>
