@@ -1,13 +1,22 @@
 import React from "react";
 import Step4 from "../Steps/Step4";
+import { useSigner } from "@thirdweb-dev/react";
 
 const Pay = () => {
+  const signer = useSigner();
+
+  const signMessage = async () => {
+    const message = "Hello World";
+    const signature = await signer.signMessage(message);
+    console.log(signature);
+  };
+
   return (
     <div className="flex flex-row mt-[58px] gap-[150px]">
       <div className="flex flex-col gap-[24px]">
         <p className="text-[28px]">Attestation</p>
         <div className="flex flex-row gap-[16px] w-[540px] h-[110px] rounded-[10px] bg-[#f8f8f8] p-[24px]">
-          <img src="/images/check.svg" alt="" />
+          <img onClick={signMessage} src="/images/check.svg" alt="" />
           <p className="text-[24px] w-[441px] leading-28px">
             Click on the check box to attest the templates created by you
           </p>
