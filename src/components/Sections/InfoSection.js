@@ -102,7 +102,9 @@ const InfoSection = ({ handleNext }) => {
           </div>
         </div>
       </div>
-      <div>image</div>
+      <div>
+        <img src="/images/about.svg" alt="" />
+      </div>
     </div>
   );
 };
