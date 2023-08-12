@@ -24,9 +24,11 @@ const EcoSelect = () => {
   useEffect(() => {
     console.log(pathname);
 
-    // Set theme based on pathname
+    // Set color based on pathname
     if (pathname === "/chat") {
       setLineColor("#454545");
+    } else {
+      setLineColor("#ffffff");
     }
   }, [pathname]);
 
@@ -34,7 +36,8 @@ const EcoSelect = () => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className={`flex flex-row items-center gap-[4px] h-[60px] w-[100px] bg-transparent border-b border-[${lineColor}] focus:outline-none px-[12px]`}
+        className={`flex flex-row items-center gap-[4px] h-[60px] w-[100px] bg-transparent border-b focus:outline-none px-[12px]`}
+        style={{ borderColor: lineColor }}
       >
         <img src={selectedImage} alt="Selected" className="w-[48px] h-[48px]" />
         <svg
@@ -47,9 +50,9 @@ const EcoSelect = () => {
           <path
             d="M6 9L12 15L18 9"
             stroke={lineColor}
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
@@ -87,7 +90,7 @@ const EcoSelect = () => {
               />
             </button>
           </li>
-          <li className="flex flex-row justify-center items-center cursor-pointer w-full h-[60px]  ">
+          <li className="flex flex-row justify-center items-center cursor-pointer w-full h-[60px]">
             <button onClick={() => handleChange("/logos/mode.svg", "mode")}>
               <img
                 src="/logos/mode.svg"
