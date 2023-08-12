@@ -1,12 +1,26 @@
 import React, { useContext, useState } from "react";
 import { EcoSystemContext } from "../../contexts/EcoSystemContext";
-
+import { useSigner } from "@thirdweb-dev/react";
 import TemplateHolder from "../UI/TemplateHolder";
 
 const Deploy = () => {
   const { ecosystem } = useContext(EcoSystemContext);
   const [showDrop, setShowDrop] = useState(false);
+  const [isSigned, setIsSigned] = useState(false);
+  const [deploying, setDeploying] = useState(false);
 
+  const signer = useSigner();
+
+  const signMessage = async () => {
+    const message = "Hello World";
+    try {
+      const signature = await signer.signMessage(message);
+      console.log(signature);
+      setIsSigned(true); // Set isSigned to true after successfully signing the message
+    } catch (err) {
+      console.error("Error signing the message:", err);
+    }
+  };
   // Define the array of card data
   const cardData = [
     {
@@ -140,9 +154,30 @@ const Deploy = () => {
           alt=""
         />
         {showDrop && (
-          <button className="w-[246px] h-[60px] text-white font-bold text-[20px] rounded-[8px] bg-[#262626]">
-            CONFIRM
-          </button>
+          <>
+            {!isSigned ? (
+              <button
+                className="w-[246px] h-[60px] text-white font-bold text-[20px] rounded-[8px] bg-[#262626]"
+                onClick={signMessage} // Call the signMessage function when the "CONFIRM" button is clicked
+              >
+                CONFIRM
+              </button>
+            ) : (
+              <button
+                className="flex flex-row items-center justify-center w-[246px] h-[60px] text-white font-bold text-[20px] rounded-[8px] bg-[#262626] cursor-pointer"
+                onClick={() => setDeploying(true)}
+              >
+                {!deploying ? (
+                  "DEPLOY"
+                ) : (
+                  <>
+                    <span className="loading loading-spinner"></span>
+                    &nbsp;DEPLOYING
+                  </>
+                )}
+              </button>
+            )}
+          </>
         )}
       </div>
     </TemplateHolder>
