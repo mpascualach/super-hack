@@ -58,12 +58,19 @@ const Create = () => {
               <option>Zora</option>
             </select>
           </div>
-          <button
-            className="w-[545px] h-[60px] bg-[#262626] text-white rounded-[8px] mt-[105px] font-bold"
-            onClick={handleGenerate}
-          >
-            GENERATE
-          </button>
+          <div className="flex flex-row justify-between items-center  mt-[105px]">
+            <img
+              className="h-[36px] w-[36px]"
+              src="/logos/optimism.svg"
+              alt=""
+            />
+            <button
+              className="w-[195px] h-[60px] bg-[#262626] text-white rounded-[8px] font-bold"
+              onClick={handleGenerate}
+            >
+              GENERATE
+            </button>
+          </div>
         </div>
       ) : (
         <div className="h-[525px]">
@@ -124,9 +131,19 @@ const Create = () => {
                     <img className="h-[16px]" src="/zora.svg" alt="" />
                     <span className="text-[18px] ">0.01 ETH</span>
                   </p>
-                  <button className="w-[545px] h-[60px] bg-[#262626] text-white rounded-[8px] mt-[38px] font-bold">
-                    MINT
-                  </button>
+                  <div className="flex flex-row justify-between items-center  mt-[38px]">
+                    <img
+                      className="h-[36px] w-[36px]"
+                      src="/logos/optimism.svg"
+                      alt=""
+                    />
+                    <button
+                      className="w-[195px] h-[60px] bg-[#262626] text-white rounded-[8px] font-bold"
+                      onClick={handleGenerate}
+                    >
+                      MINT
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
