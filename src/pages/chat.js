@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 import Layout from "../components/UI/Layout";
 import SidePanel from "../components/UI/SidePanel";
+import Template from "../components/UI/Template";
+import Loader from "../components/Custom/Loader";
 
 const chat = () => {
   const [inputValue, setInputValue] = useState("");
   const [responseText, setResponseText] = useState("");
+
+  const [outputContent, setOutputContent] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const setOutput = (template) => {
+    const newContent = <Template template={template} />;
+    setOutputContent(newContent);
+  };
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -22,6 +32,7 @@ const chat = () => {
       });
       const data = await response.json();
       console.log(data);
+      setOutput(data.message);
       setResponseText(data.message);
     }
   };
@@ -38,6 +49,15 @@ const chat = () => {
             name=""
             id=""
           />
+          <div className="output">
+            {isLoading && (
+              <div className="flex flex-row justify-center items-center">
+                <Loader />
+              </div>
+            )}
+
+            {outputContent}
+          </div>
           <p className="text-white">{responseText}</p>
         </div>
         <SidePanel />
