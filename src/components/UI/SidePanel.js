@@ -37,7 +37,7 @@ const SidePanel = () => {
               </div>
               <img
                 className="h-[92px] w-[92px]"
-                src={`/cats/cat${index + 1}.svg`}
+                src={`/cats/cat${index === 0 ? 5 : index + 1}.svg`}
                 alt=""
               />
             </div>
