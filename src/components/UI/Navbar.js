@@ -33,7 +33,7 @@ const Navbar = () => {
     >
       <div className="navbar-start">
         <Link href="/">
-          <img src="/eigen-logo.svg" className="h-[37px] w-[36px]" alt="" />
+          <img src="/images/logo.png" className="h-[48px] w-[123px]" alt="" />
         </Link>
       </div>
       <div className="navbar-center"></div>
