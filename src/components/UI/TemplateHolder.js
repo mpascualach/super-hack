@@ -5,19 +5,21 @@ const TemplateHolder = ({ title, children }) => {
   const { ecosystem } = useContext(EcoSystemContext);
 
   const colors = {
-    optimism: { border: "[#fff]", bg: "[#FF0420]", text: "white" },
-    base: { border: "[#0052FE]", bg: "[#0052FE]", text: "white" },
-    zora: { border: "[#909090]", bg: "[#909090]", text: "white" },
-    mode: { border: "[#DFFE00]", bg: "[#DFFE00]", text: "black" },
+    optimism: { border: "#fff", bg: "#FF0420", text: "white" },
+    base: { border: "#0052FE", bg: "#0052FE", text: "white" },
+    zora: { border: "#909090", bg: "#909090", text: "white" },
+    mode: { border: "#DFFE00", bg: "#DFFE00", text: "black" },
   };
 
   return (
     <div className="rounded-[18px] bg-white min-h-[200px] w-fit shadow-NFT">
       <div
-        className={`bg-${colors[ecosystem]["bg"]} h-[60px] flex flex-row justify-between items-center p-[16px] rounded-t-[18px] text-[20px]`}
+        style={{ backgroundColor: colors[ecosystem].bg }}
+        className={`h-[60px] flex flex-row justify-between items-center p-[16px] rounded-t-[18px] text-[20px]`}
       >
         <p
-          className={`text-[28px] font-bold text-${colors[ecosystem]["text"]}`}
+          style={{ color: colors[ecosystem].text }}
+          className="text-[28px] font-bold"
         >
           {title}
         </p>
