@@ -22,6 +22,7 @@ const chat = () => {
 
   const handleKeyPress = async (e) => {
     if (e.key === "Enter") {
+      setIsLoading(true);
       // Execute fetch when Enter key is pressed
       const response = await fetch("/api/ai", {
         method: "POST",
@@ -34,6 +35,7 @@ const chat = () => {
       console.log(data);
       setOutput(data.message);
       setResponseText(data.message);
+      setIsLoading(false);
     }
   };
   return (
