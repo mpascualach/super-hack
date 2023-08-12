@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import TemplateHolder from "../UI/TemplateHolder";
 import Loader from "../Custom/Loader";
-
-const images = ["/images/img1.png", "/images/img2.png", "/images/img3.png"];
+import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const Create = () => {
+  const { ecosystem } = useContext(EcoSystemContext);
   const [prompt, setPrompt] = useState(
     "UK countryside street on a sunny afternoon"
   );
@@ -61,7 +61,7 @@ const Create = () => {
           <div className="flex flex-row justify-between items-center  mt-[105px]">
             <img
               className="h-[36px] w-[36px]"
-              src="/logos/optimism.svg"
+              src={`/logos/${ecosystem}.svg`}
               alt=""
             />
             <button
@@ -134,7 +134,7 @@ const Create = () => {
                   <div className="flex flex-row justify-between items-center  mt-[38px]">
                     <img
                       className="h-[36px] w-[36px]"
-                      src="/logos/optimism.svg"
+                      src={`/logos/${ecosystem}.svg`}
                       alt=""
                     />
                     <button
