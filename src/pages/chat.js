@@ -19,7 +19,7 @@ const chat = () => {
             name=""
             id=""
           />
-          <Create />
+          {/* <Create /> */}
           <Deploy />
         </div>
         <SidePanel />
