@@ -22,7 +22,7 @@ const EcoSelect = () => {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="flex flex-row items-center gap-[4px] h-[60px] w-[100px] rounded-[10px] bg-transparent border border-[#D9D9D9CC] focus:outline-none px-[12px]"
+        className="flex flex-row items-center gap-[4px] h-[60px] w-[100px] bg-transparent border-b border-[#454545] focus:outline-none px-[12px]"
       >
         <img src={selectedImage} alt="Selected" className="w-[48px] h-[48px]" />
         <svg
@@ -34,7 +34,7 @@ const EcoSelect = () => {
         >
           <path
             d="M6 9L12 15L18 9"
-            stroke="#D9D9D9"
+            stroke="#454545"
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
@@ -44,9 +44,9 @@ const EcoSelect = () => {
       {isOpen && (
         <ul
           ref={dropdownRef}
-          className="z-50 flex flex-col gap-[12px] absolute w-[100px] items-center  border p-[12px] rounded-[10px] bg-white mt-[12px] shadow-lg"
+          className="z-50 flex flex-col absolute w-[100px] items-center  border border-[#4E4C4C] rounded-[10px] bg-[#454545] mt-[12px] shadow-lg"
         >
-          <li className="cursor-pointer">
+          <li className="flex flex-row justify-center items-center cursor-pointer border-b-2 border-[#4E4C4C] w-full h-[60px] ">
             <button
               onClick={() => handleChange("/logos/optimism.svg", "optimism")}
             >
@@ -57,7 +57,7 @@ const EcoSelect = () => {
               />
             </button>
           </li>
-          <li className="cursor-pointer">
+          <li className="flex flex-row justify-center items-center cursor-pointer border-b-2 border-[#4E4C4C] w-full h-[60px] ">
             <button onClick={() => handleChange("/logos/base.svg", "base")}>
               <img
                 src="/logos/base.svg"
@@ -66,7 +66,7 @@ const EcoSelect = () => {
               />
             </button>
           </li>
-          <li className="cursor-pointer">
+          <li className="flex flex-row justify-center items-center cursor-pointer border-b-2 border-[#4E4C4C] w-full h-[60px]">
             <button onClick={() => handleChange("/logos/zora.svg", "zora")}>
               <img
                 src="/logos/zora.svg"
@@ -75,7 +75,7 @@ const EcoSelect = () => {
               />
             </button>
           </li>
-          <li className="cursor-pointer">
+          <li className="flex flex-row justify-center items-center cursor-pointer w-full h-[60px]  ">
             <button onClick={() => handleChange("/logos/mode.svg", "mode")}>
               <img
                 src="/logos/mode.svg"

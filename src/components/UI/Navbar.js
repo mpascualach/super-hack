@@ -56,17 +56,13 @@ const Navbar = () => {
           </Link>
           <EcoSelect />
         </div>
-        <div className="h-[47px] w-[1px] border borer-white rounded-full"></div>
+        <div className="h-[47px] w-[1px] border border-[#454545] rounded-full"></div>
         <details className="dropdown dropdown-end">
           <summary
             tabIndex={0}
             className="flex flex-row items-center gap-[9px]  cursor-pointer"
           >
-            <div className="pt-[5px] pl-[10px] h-[48px] w-[48px] rounded-full border border-white">
-              <div className="rounded-full ">
-                <img className="h-[36px] w-[25px]" src="/dude.svg" alt="" />
-              </div>
-            </div>
+            <img className="h-[50px] w-[48px]" src="/dude.svg" alt="" />
           </summary>
           <ul
             tabIndex={0}
