@@ -3,7 +3,6 @@ import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const SidePanel = () => {
   const { ecosystem } = useContext(EcoSystemContext);
-  console.log(ecosystem);
 
   const colors = {
     optimism: { border: "[#fff]", bg: "[#FF0420]", text: "white" },

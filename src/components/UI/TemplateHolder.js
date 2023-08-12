@@ -3,21 +3,25 @@ import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const TemplateHolder = ({ title, children }) => {
   const { ecosystem } = useContext(EcoSystemContext);
-  console.log(ecosystem);
 
   const colors = {
-    optimism: "bg-[#FF0420]",
-    base: "bg-[#0052FE]",
-    zora: "bg-[#909090]",
-    mode: "bg-[#DFFE00]",
+    optimism: { border: "[#fff]", bg: "[#FF0420]", text: "white" },
+    base: { border: "[#0052FE]", bg: "[#0052FE]", text: "white" },
+    zora: { border: "[#909090]", bg: "[#909090]", text: "white" },
+    mode: { border: "[#DFFE00]", bg: "[#DFFE00]", text: "black" },
   };
+
   return (
     <div className="rounded-[18px] bg-white min-h-[200px] w-fit shadow-NFT">
       <div
-        className={`${colors[ecosystem]} h-[60px] flex flex-row justify-between items-center p-[16px] rounded-t-[18px] text-[20px]`}
+        className={`bg-${colors[ecosystem]["bg"]} h-[60px] flex flex-row justify-between items-center p-[16px] rounded-t-[18px] text-[20px]`}
       >
-        <p className="text-[28px] font-bold text-white">{title}</p>
-        <img className="h-[24px]  cursor-pointer" src="/plus.svg" alt="" />
+        <p
+          className={`text-[28px] font-bold text-${colors[ecosystem]["text"]}`}
+        >
+          {title}
+        </p>
+        <img className="h-[24px] cursor-pointer" src="/plus.svg" alt="" />
       </div>
       <div className="flex flex-col p-[16px] pt-[24px] items-center text-black">
         {children}
