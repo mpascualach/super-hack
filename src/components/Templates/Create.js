@@ -32,7 +32,7 @@ const Create = () => {
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="Enter a prompt to generate image here"
-              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690]"
+              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#f9f9f9]"
               name=""
               id=""
             />
@@ -43,7 +43,7 @@ const Create = () => {
           <div className="w-[545px] h-[60px] border border-[#ddd] rounded-[10px] flex flex-row items-center p-[14px] pl-[16px]">
             <input
               type="text"
-              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690]"
+              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#f9f9f9]"
               name=""
               id=""
             />
@@ -65,7 +65,7 @@ const Create = () => {
               alt=""
             />
             <button
-              className="w-[195px] h-[60px] bg-[#262626] text-white rounded-[8px] font-bold"
+              className="w-[195px] h-[60px] bg-[#262626] text-white rounded-[8px] font-bold "
               onClick={handleGenerate}
             >
               GENERATE

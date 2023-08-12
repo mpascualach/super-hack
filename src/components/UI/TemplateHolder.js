@@ -12,7 +12,7 @@ const TemplateHolder = ({ title, children }) => {
   };
 
   return (
-    <div className="rounded-[18px] bg-white min-h-[200px] w-fit shadow-NFT">
+    <div className="rounded-[18px] bg-[#f9f9f9] min-h-[200px] w-fit shadow-NFT">
       <div
         style={{ backgroundColor: colors[ecosystem].bg }}
         className={`h-[60px] flex flex-row justify-between items-center p-[16px] rounded-t-[18px] text-[20px]`}
@@ -33,7 +33,7 @@ const TemplateHolder = ({ title, children }) => {
           alt=""
         />
       </div>
-      <div className="flex flex-col p-[16px] pt-[24px] items-center text-black">
+      <div className="flex flex-col p-[16px] pt-[24px] text-black">
         {children}
       </div>
     </div>

@@ -5,6 +5,7 @@ import TemplateHolder from "../components/UI/TemplateHolder";
 import Loader from "../components/Custom/Loader";
 import Create from "../components/Templates/Create";
 import Guide from "../components/Templates/Guide";
+import Deploy from "../components/Templates/Deploy";
 
 const chat = () => {
   return (
@@ -19,6 +20,7 @@ const chat = () => {
             id=""
           />
           <Create />
+          <Deploy />
         </div>
         <SidePanel />
       </div>
