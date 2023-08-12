@@ -1,13 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import Lottie from "react-lottie-player";
-import loading from "../../helpers/loading.json";
+import mode from "../../helpers/mode.json";
+import zora from "../../helpers/zora.json";
+import optimisim from "../../helpers/optimisim.json";
+import base from "../../helpers/base.json";
+import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const Loader = () => {
+  const { ecosystem } = useContext(EcoSystemContext);
+
   return (
     <div>
       <Lottie
         loop
-        animationData={loading}
+        animationData={
+          ecosystem === "mode"
+            ? mode
+            : ecosystem === "zora"
+            ? zora
+            : ecosystem === "optimism"
+            ? optimisim
+            : base
+        }
         play
         style={{ width: 117, height: 117 }}
       />
