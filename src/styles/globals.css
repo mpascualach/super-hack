@@ -16,3 +16,13 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+.connect-wallet-button {
+  width: 285px !important;
+  height: 60px !important;
+  background-color: #262626 !important;
+  border-radius: 8px !important;
+  color: #fff !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+}
