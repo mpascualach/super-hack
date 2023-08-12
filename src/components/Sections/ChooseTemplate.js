@@ -16,24 +16,28 @@ const ChooseTemplate = ({ handleNext }) => {
       <div className="grid grid-cols-4 gap-4">
         <TemplateCard
           title="Generate NFTs"
+          content="Template that can help users generate a NFT within 2 clicks."
           onSelect={handleSelect}
           isSelected={selectedTitles.includes("Generate NFTs")}
           index={1}
         />
         <TemplateCard
           title="Buy NFT"
+          content="Template that can help users buy NFTS within 2 clicks. The agent will also suggest and scout NFTs for the user."
           onSelect={handleSelect}
           isSelected={selectedTitles.includes("Buy NFT")}
           index={2}
         />
         <TemplateCard
-          title="Create Smart Contract"
+          title="Deploy contracts"
+          content="A smart contract will be generate for you, from a range of options. A NFT drop contract, a token NFT & more."
           onSelect={handleSelect}
-          isSelected={selectedTitles.includes("Create Smart Contract")}
+          isSelected={selectedTitles.includes("Deploy contracts")}
           index={3}
         />
         <TemplateCard
           title="User Manual"
+          content="Any guide that the user needs, the agent will be here. All and any information about your business will be presented in an understandable manner"
           onSelect={handleSelect}
           isSelected={selectedTitles.includes("User Manual")}
           index={4}
@@ -57,7 +61,7 @@ const ChooseTemplate = ({ handleNext }) => {
   );
 };
 
-const TemplateCard = ({ title, onSelect, isSelected, index }) => {
+const TemplateCard = ({ title, onSelect, isSelected, index, content }) => {
   return (
     <div
       className={`flex flex-col w-[389px] cursor-pointer ${
@@ -77,9 +81,8 @@ const TemplateCard = ({ title, onSelect, isSelected, index }) => {
           />
         </div>
 
-        <p className="text-[20px] mt-[33px] mb-[28px]">
-          Template that can help users buy NFTS within 2 clicks. The agent will
-          also suggest and scout NFTs for the user.
+        <p className="text-[20px] text-[#26262680] leading-[24px] mt-[33px] mb-[28px] h-[117px]">
+          {content}
         </p>
       </div>
     </div>

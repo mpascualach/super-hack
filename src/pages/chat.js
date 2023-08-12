@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import Layout from "../components/UI/Layout";
 import SidePanel from "../components/UI/SidePanel";
-import TemplateHolder from "../components/UI/TemplateHolder";
-import Loader from "../components/Custom/Loader";
-import Create from "../components/Templates/Create";
-import Guide from "../components/Templates/Guide";
-import Deploy from "../components/Templates/Deploy";
 
 const chat = () => {
-  const [inputValue, setInputValue] = useState(""); // to track the value of the input
+  const [inputValue, setInputValue] = useState("");
+  const [responseText, setResponseText] = useState("");
 
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
@@ -26,6 +22,7 @@ const chat = () => {
       });
       const data = await response.json();
       console.log(data);
+      setResponseText(data.message);
     }
   };
   return (
@@ -41,9 +38,7 @@ const chat = () => {
             name=""
             id=""
           />
-          {/* <Create /> */}
-          {/* <Deploy /> */}
-          <Guide />
+          <p className="text-white">{responseText}</p>
         </div>
         <SidePanel />
       </div>
