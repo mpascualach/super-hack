@@ -1,26 +1,26 @@
-import { Inter } from "next/font/google";
-import { ConnectWallet } from "@thirdweb-dev/react";
-import { useNFT, useNFTMetadata } from "@zoralabs/nft-hooks";
-import Navbar from "../components/UI/Navbar";
-import Layout from "../components/UI/Layout";
-
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
-  const { data } = useNFT("0xabEFBc9fD2F806065b4f3C237d4b59D9A97Bcac7", "20");
-
   return (
-    <Layout>
-      <h1>Agent</h1>
-      <a href="/api/auth/login">Login</a>
-
-      {data && (
-        <div>
-          {/* <h3>{data.metadata.name}</h3>
-          <p>{data.metadata.description}</p>
-          <p>Owned by: {data.nft.owner.address}</p> */}
-        </div>
-      )}
-    </Layout>
+    <div className="flex flex-row h-screen bg-[#699BF7] px-[166px] pt-[186px] gap-[177px] ">
+      <div className="flex flex-col">
+        <img className="h-[653px] w-[673px]" src="/images/landing.png" alt="" />
+      </div>
+      <div className="flex flex-col">
+        <p className="font-bold text-[96px] w-[469px] mt-[70px] text-white leading-[102px]">
+          welcome to{" "}
+          <span className="italic relative inline-block pb-[2px]">
+            ALLY
+            <span className="absolute inset-x-0 bottom-0 h-[5px] bg-current"></span>
+          </span>
+        </p>
+        <a href="/api/auth/login">
+          <button className="w-[481px] h-[60px] bg-white rounded-[8px] text-[24px] font-bold text-[#699BF7] mt-[58px]">
+            LETS SIGN IN
+          </button>
+        </a>
+        <p className="w-[333px] mt-[48px] text-white text-opacity-50 text-[36px] font-bold leading-[48px]">
+          create your ally in 3 steps.
+        </p>
+      </div>
+    </div>
   );
 }

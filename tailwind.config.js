@@ -11,7 +11,7 @@ module.exports = {
         "gray-custom": "rgba(57, 57, 57, 0.38)",
       },
       lineHeight: {
-        "28px": "28px",
+        "102px": "102px",
       },
     },
   },
