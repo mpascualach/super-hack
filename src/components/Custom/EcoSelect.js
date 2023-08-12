@@ -1,10 +1,12 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, useContext, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
 const EcoSelect = () => {
   const [selectedImage, setSelectedImage] = useState("/logos/optimism.svg");
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const [lineColor, setLineColor] = useState("#ffffff");
 
   const { setEcosystem } = useContext(EcoSystemContext);
 
@@ -18,11 +20,21 @@ const EcoSelect = () => {
     setIsOpen(!isOpen);
   };
 
+  const pathname = usePathname();
+  useEffect(() => {
+    console.log(pathname);
+
+    // Set theme based on pathname
+    if (pathname === "/chat") {
+      setLineColor("#454545");
+    }
+  }, [pathname]);
+
   return (
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className="flex flex-row items-center gap-[4px] h-[60px] w-[100px] bg-transparent border-b border-[#454545] focus:outline-none px-[12px]"
+        className={`flex flex-row items-center gap-[4px] h-[60px] w-[100px] bg-transparent border-b border-[${lineColor}] focus:outline-none px-[12px]`}
       >
         <img src={selectedImage} alt="Selected" className="w-[48px] h-[48px]" />
         <svg
@@ -34,7 +46,7 @@ const EcoSelect = () => {
         >
           <path
             d="M6 9L12 15L18 9"
-            stroke="#454545"
+            stroke={lineColor}
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"

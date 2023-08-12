@@ -9,6 +9,8 @@ const Navbar = () => {
   const [theme, setTheme] = useState("normal");
   const pathname = usePathname();
 
+  const [lineColor, setLineColor] = useState("#ffffff");
+
   const address = useAddress();
 
   useEffect(() => {
@@ -18,6 +20,7 @@ const Navbar = () => {
     // Set theme based on pathname
     if (pathname === "/chat") {
       setTheme("chat");
+      setLineColor("#454545");
     } else {
       setTheme("normal");
     }
@@ -56,7 +59,9 @@ const Navbar = () => {
           </Link>
           <EcoSelect />
         </div>
-        <div className="h-[47px] w-[1px] border border-[#454545] rounded-full"></div>
+        <div
+          className={`h-[47px] w-[1px] border border-[${lineColor}] rounded-full`}
+        ></div>
         <details className="dropdown dropdown-end">
           <summary
             tabIndex={0}
