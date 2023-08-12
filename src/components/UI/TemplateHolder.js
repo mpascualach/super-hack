@@ -23,7 +23,15 @@ const TemplateHolder = ({ title, children }) => {
         >
           {title}
         </p>
-        <img className="h-[24px] cursor-pointer" src="/plus.svg" alt="" />
+        <img
+          style={{
+            filter:
+              colors[ecosystem].text === "black" ? "invert(100%)" : "none",
+          }}
+          className="h-[24px] cursor-pointer grayscale"
+          src="/plus.svg"
+          alt=""
+        />
       </div>
       <div className="flex flex-col p-[16px] pt-[24px] items-center text-black">
         {children}
