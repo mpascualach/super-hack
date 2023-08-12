@@ -23,6 +23,7 @@ const Navbar = () => {
       setLineColor("#454545");
     } else {
       setTheme("normal");
+      setLineColor("#ffffff"); // set it back to white for other routes
     }
   }, [pathname]);
 
@@ -60,7 +61,8 @@ const Navbar = () => {
           <EcoSelect />
         </div>
         <div
-          className={`h-[47px] w-[1px] border border-[${lineColor}] rounded-full`}
+          style={{ borderColor: lineColor }}
+          className="h-[47px] w-[1px] border rounded-full"
         ></div>
         <details className="dropdown dropdown-end">
           <summary
