@@ -9,10 +9,21 @@ const Deploy = () => {
   const [isSigned, setIsSigned] = useState(false);
   const [deploying, setDeploying] = useState(false);
 
+  const [imageName, setImageName] = useState("My Art NFT");
+  const [imageDescription, setImageDescription] = useState(
+    "A tokenized representation of the Starry Night painting."
+  );
+  const [symbol, setSymbol] = useState("MAT");
+  const [recipientAddress, setRecipientAddress] = useState(
+    "0xCafa93E9985793E2475bD58B9215c21Dbd421fD0"
+  );
+  const [percentage, setPercentage] = useState("10%");
+
   const signer = useSigner();
 
   const signMessage = async () => {
-    const message = "Hello World";
+    const message = `Name: ${imageName}, Description: ${imageDescription}, Symbol: ${symbol}, Recipient Address: ${recipientAddress}, Percentage: ${percentage}`;
+
     try {
       const signature = await signer.signMessage(message);
       console.log(signature);
@@ -91,6 +102,7 @@ const Deploy = () => {
               <div className="w-[379px] h-[40px] bg-white rounded-[10px] flex flex-row items-center p-[14px] pl-[16px] mb-[8px]">
                 <input
                   type="text"
+                  value="My Art NFT"
                   className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#fff]"
                   name=""
                   id=""
@@ -101,6 +113,7 @@ const Deploy = () => {
               </p>
               <div className="w-[379px] h-[68px] bg-white rounded-[10px] flex flex-row items-center p-[14px] pl-[16px]">
                 <textarea
+                  value="A tokenized representation of the Starry Night painting."
                   type="text"
                   className="w-[450px] h-[68px] text-[16px] focus:outline-none text-[#26262690] bg-[#fff]"
                   name=""
@@ -115,6 +128,7 @@ const Deploy = () => {
               <div className="w-[403px] h-[40px] bg-white rounded-[10px] flex flex-row items-center p-[14px] pl-[16px] mb-[23px]">
                 <input
                   type="text"
+                  value="MAT"
                   className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#fff]"
                   name=""
                   id=""
@@ -125,6 +139,7 @@ const Deploy = () => {
               </p>
               <div className="w-[403px] h-[40px] bg-white rounded-[10px] flex flex-row items-center p-[14px] pl-[16px] mb-[23px]">
                 <input
+                  value="0xCafa93E9985793E2475bD58B9215c21Dbd421fD0"
                   type="text"
                   className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#fff]"
                   name=""
@@ -136,6 +151,7 @@ const Deploy = () => {
               </p>
               <div className="w-[403px] h-[40px] bg-white rounded-[10px] flex flex-row items-center p-[14px] pl-[16px] mb-[8px]">
                 <input
+                  value="10%"
                   type="text"
                   className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#fff]"
                   name=""
