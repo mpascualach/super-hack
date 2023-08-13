@@ -18,13 +18,29 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
     setOutputContent("");
   };
 
+  const inputs = [
+    {
+      "User manual":
+        "Create a step-by-step guide on how to deploy a sample contract using thirdweb",
+    },
+    { "Generate NFTS!!!": "I want to mint a NFT" },
+    {
+      "Deploy smart contract":
+        "Help me create a NFT collection on mode network",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-[24px]">
-      {["User manual", "Generate NFTS!!!", "Deploy smart contract"].map(
-        (text, index) => (
+      {inputs.map((input, index) => {
+        const title = Object.keys(input)[0];
+        const message = input[title];
+
+        return (
           <div
+            onClick={() => setInputValue(message)} // Set input value on click
             style={{ border: `1px solid ${colors[ecosystem].border}` }}
-            className="h-[180px] w-[558px] rounded-[20px]"
+            className="h-[180px] w-[558px] rounded-[20px] cursor-pointer" // added cursor-pointer to indicate it's clickable
             key={index}
           >
             <div className="flex flex-row pl-[24px] pt-[44px] pr-[32px] justify-between">
@@ -39,7 +55,7 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
                   <path d="M0 2H81" stroke="#D9D9D9" strokeWidth="4" />
                 </svg>
                 <p style={{ color: "#D9D9D9" }} className="text-[32px]">
-                  {text}
+                  {title} {/* Fixed here, replaced {text} with {title} */}
                 </p>
               </div>
               <img
@@ -49,8 +65,8 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
               />
             </div>
           </div>
-        )
-      )}
+        );
+      })}
 
       <div
         style={{ border: `1px solid ${colors[ecosystem].border}` }}
