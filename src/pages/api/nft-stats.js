@@ -1,11 +1,10 @@
 import puppeteer from "puppeteer";
 import { NextApiRequest, NextApiResponse } from "next";
-import topStats from "../../helpers/top";
 
 export default async function handler(req, res) {
   try {
     //const stats = await scrapeStats();
-    res.status(200).json(topStats);
+    res.status(200).json("topStats");
   } catch (error) {
     console.error("Error scraping stats:", error);
     res.status(500).json({ error: "An error occurred while scraping stats" });
