@@ -18,21 +18,14 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: `You are an AI assistant for the moonbeam blockchain, your job is to process the user query and check if it falls or is related to the query description in key1 of list of objects given below if it does then return key2 if it doesn't then instead of key2 return none
-                        List:[
-                            {"Buy an NFT on the moonbeam blockchain or unique network": "buyNFT"},
-                            {"Send money to a wallet address": "SendMoney"},
-                            {"upcoming Airdrops on moonbeam blockchain":"Drop"},
-                            {"Set Reminders about things to do":"Reminder"},
-                            {"Perform task or activities like searching for NFTs or Looking for NFTs under a budget, like search for NFTs under 1000 UNQ" :"Task"},
-                            {"Check wallet health of a wallet address":"WalletHealth"},
-                            {"Generate a smart contract ":"SmartContract"},
-                            {"Debug the code":"Debug"},
-                            {"Bridge money from any blockchain":"Bridge"},
-                            {"Get suggestions about communities":"Subsocial"},
-                            {"Create a dynamic NFT":"Create"}
-                        ]
-                        Remember to return just the key2 or none`,
+            content: `You are an AI assistant for blockchain ecosystem, your job is to process the user query and check if it falls or is related to the query description in key1 of list of objects given below if it does then return key2 if it doesn't then instead of key2 return none.
+List:[
+{"Mint a AI generated NFT or buy a NFT ":mintNFT"},
+{"Help with creating a NFT collection":"smartContract"},
+{"Guide to deploy with thirdweb ":"guide"},
+]
+
+Remember to return the key2 or none for key`,
           },
           { role: "user", content: query },
         ],

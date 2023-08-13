@@ -8,13 +8,13 @@ const Template = ({ template }) => {
   let component;
 
   switch (template) {
-    case "SmartContract":
+    case "mintNFT":
       component = <Create />;
       break;
-    case "Deploy":
+    case "smartContract":
       component = <Deploy />;
       break;
-    case "Guide":
+    case "guide":
       component = <Guide />;
       break;
     default:
