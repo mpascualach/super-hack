@@ -26,3 +26,8 @@ body {
   font-size: 24px !important;
   font-weight: 400 !important;
 }
+
+.mint-button {
+  width: 195px !important;
+  font-weight: 700 !important;
+}

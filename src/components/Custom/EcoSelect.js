@@ -1,6 +1,13 @@
 import React, { useState, useRef, useContext, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { EcoSystemContext } from "../../contexts/EcoSystemContext";
+import { useSwitchChain } from "@thirdweb-dev/react";
+import {
+  ModeTestnet,
+  OptimismGoerli,
+  ZoraTestnet,
+  BaseGoerli,
+} from "@thirdweb-dev/chains";
 
 const EcoSelect = () => {
   const [selectedImage, setSelectedImage] = useState("/logos/optimism.svg");
@@ -9,6 +16,8 @@ const EcoSelect = () => {
   const [lineColor, setLineColor] = useState("#ffffff");
 
   const { setEcosystem } = useContext(EcoSystemContext);
+
+  const switchChain = useSwitchChain();
 
   const handleChange = (image, ecosystemName) => {
     setSelectedImage(image);
@@ -63,7 +72,10 @@ const EcoSelect = () => {
         >
           <li className="flex flex-row justify-center items-center cursor-pointer border-b-2 border-[#4E4C4C] w-full h-[60px] ">
             <button
-              onClick={() => handleChange("/logos/optimism.svg", "optimism")}
+              onClick={() => {
+                handleChange("/logos/optimism.svg", "optimism");
+                switchChain(OptimismGoerli.chainId);
+              }}
             >
               <img
                 src="/logos/optimism.svg"
@@ -73,7 +85,12 @@ const EcoSelect = () => {
             </button>
           </li>
           <li className="flex flex-row justify-center items-center cursor-pointer border-b-2 border-[#4E4C4C] w-full h-[60px] ">
-            <button onClick={() => handleChange("/logos/base.svg", "base")}>
+            <button
+              onClick={() => {
+                handleChange("/logos/base.svg", "base");
+                switchChain(BaseGoerli.chainId);
+              }}
+            >
               <img
                 src="/logos/base.svg"
                 alt="Option 2"
@@ -82,7 +99,12 @@ const EcoSelect = () => {
             </button>
           </li>
           <li className="flex flex-row justify-center items-center cursor-pointer border-b-2 border-[#4E4C4C] w-full h-[60px]">
-            <button onClick={() => handleChange("/logos/zora.svg", "zora")}>
+            <button
+              onClick={() => {
+                handleChange("/logos/zora.svg", "zora");
+                switchChain(ZoraTestnet.chainId);
+              }}
+            >
               <img
                 src="/logos/zora.svg"
                 alt="Option 3"
@@ -91,7 +113,12 @@ const EcoSelect = () => {
             </button>
           </li>
           <li className="flex flex-row justify-center items-center cursor-pointer w-full h-[60px]">
-            <button onClick={() => handleChange("/logos/mode.svg", "mode")}>
+            <button
+              onClick={() => {
+                handleChange("/logos/mode.svg", "mode");
+                switchChain(ModeTestnet.chainId);
+              }}
+            >
               <img
                 src="/logos/mode.svg"
                 alt="Option 4"

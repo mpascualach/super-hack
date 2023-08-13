@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import TemplateHolder from "../UI/TemplateHolder";
 import Loader from "../Custom/Loader";
 import { EcoSystemContext } from "../../contexts/EcoSystemContext";
+import { Web3Button } from "@thirdweb-dev/react";
 
 const Create = () => {
   const { ecosystem } = useContext(EcoSystemContext);
@@ -137,12 +138,19 @@ const Create = () => {
                       src={`/logos/${ecosystem}.svg`}
                       alt=""
                     />
-                    <button
+                    <Web3Button
+                      contractAddress="0x50b21C8eCA540a92A1b07F18548cAd197Cad73Dc"
+                      action={(contract) => contract.erc1155.claim(0, 1)}
+                      className="connect-wallet-button mint-button"
+                    >
+                      MINT
+                    </Web3Button>
+                    {/* <button
                       className="w-[195px] h-[60px] bg-[#262626] text-white rounded-[8px] font-bold"
                       onClick={handleGenerate}
                     >
                       MINT
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </div>
