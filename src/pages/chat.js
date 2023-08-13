@@ -20,6 +20,29 @@ const chat = () => {
     setInputValue(e.target.value);
   };
 
+  const responseIntro = [
+    {
+      mintNFT:
+        "Sure I can help you mint an NFT. You can generate it using AI, doesn't that sound fun?",
+    },
+    {
+      smartContract:
+        "Yes, I can help you deploy a smart contract. Just 3 clicks away!",
+    },
+    {
+      guide:
+        "I think breaking complex things down into byte sized chunks is the best way to learn. Here you go:",
+    },
+    {
+      none: "Sorry, I don't understand. Please try again.",
+    },
+  ];
+
+  const getResponseIntroText = (text) => {
+    const foundItem = responseIntro.find((item) => item[text]);
+    return foundItem ? foundItem[text] : null;
+  };
+
   const handleKeyPress = async (e) => {
     if (e.key === "Enter") {
       setIsLoading(true);
@@ -36,6 +59,7 @@ const chat = () => {
       setOutput(data.message);
       setResponseText(data.message);
       setIsLoading(false);
+      console.log(responseIntro[responseText]);
     }
   };
   return (
@@ -58,7 +82,9 @@ const chat = () => {
                 <Loader />
               </div>
             )}
-            <p className="text-white h-[55px] mt-[32px]">{responseText}</p>
+            <p className="text-white h-[55px] mt-[32px]">
+              {getResponseIntroText(responseText)}
+            </p>
             {outputContent}
           </div>
         </div>
