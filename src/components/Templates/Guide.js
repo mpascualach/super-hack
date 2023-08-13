@@ -17,6 +17,10 @@ const Guide = () => {
 
   const [currentStep, setCurrentStep] = useState(0);
 
+  const [showProject, setShowProject] = useState(false);
+
+  const address = useAddress();
+
   const goToNextStep = () => {
     if (currentStep < steps.length - 1) {
       setCurrentStep(currentStep + 1);
@@ -47,51 +51,58 @@ const Guide = () => {
                 <ConnectWallet className="connect-wallet-button" />
               </div>
             </div>
-            <div className="flex flex-col">
-              <div className="flex flex-row gap-[16px] items-center">
+            {address && (
+              <div
+                className="flex flex-col"
+                onClick={() => setShowProject(true)}
+              >
+                <div className="flex flex-row gap-[16px] items-center">
+                  <div
+                    style={{
+                      backgroundColor: colors[ecosystem].bg,
+                      color: colors[ecosystem].text,
+                    }}
+                    className="flex flex-row items-center justify-center h-[63px] w-[63px] rounded-full text-[28px] font-bold "
+                  >
+                    2
+                  </div>
+                  <p className="text-[28px] font-bold">
+                    You need to BRIDGE funds{" "}
+                  </p>
+                </div>
+                <div className="ml-[79px]">
+                  <a
+                    href="https://bridge.base.org/deposit"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <div className="connect-wallet-button flex flex-row justify-center items-center">
+                      Bridge funds
+                    </div>
+                  </a>
+                </div>
+              </div>
+            )}
+            {address && showProject && (
+              <div
+                onClick={() => setShowSteps(true)}
+                className="flex flex-row gap-[16px] items-center cursor-pointer"
+              >
                 <div
                   style={{
                     backgroundColor: colors[ecosystem].bg,
                     color: colors[ecosystem].text,
                   }}
-                  className="flex flex-row items-center justify-center h-[63px] w-[63px] rounded-full text-[28px] font-bold "
+                  className="flex flex-row items-center justify-center h-[63px] w-[63px] rounded-full text-[28px] font-bold ]"
                 >
-                  2
+                  3
                 </div>
                 <p className="text-[28px] font-bold">
-                  You need to BRIDGE funds{" "}
+                  Let’s create a project now
                 </p>
+                <img src="/images/arrow.svg" alt="" />
               </div>
-              <div className="ml-[79px]">
-                <a
-                  href="https://bridge.base.org/deposit"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <div className="connect-wallet-button flex flex-row justify-center items-center">
-                    Bridge funds
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div
-              onClick={() => setShowSteps(true)}
-              className="flex flex-row gap-[16px] items-center cursor-pointer"
-            >
-              <div
-                style={{
-                  backgroundColor: colors[ecosystem].bg,
-                  color: colors[ecosystem].text,
-                }}
-                className="flex flex-row items-center justify-center h-[63px] w-[63px] rounded-full text-[28px] font-bold ]"
-              >
-                3
-              </div>
-              <p className="text-[28px] font-bold">
-                Let’s create a project now
-              </p>
-              <img src="/images/arrow.svg" alt="" />
-            </div>
+            )}
           </div>
         ) : (
           <div className="steps flex flex-col gap-[24px] min-h-[443px]">
