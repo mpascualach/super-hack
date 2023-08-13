@@ -61,7 +61,11 @@ const chat = () => {
             {outputContent}
           </div>
         </div>
-        <SidePanel />
+        <SidePanel
+          setInputValue={setInputValue}
+          setResponseText={setResponseText}
+          setOutputContent={setOutputContent}
+        />
       </div>
     </Layout>
   );

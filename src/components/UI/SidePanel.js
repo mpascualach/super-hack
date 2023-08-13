@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { EcoSystemContext } from "../../contexts/EcoSystemContext";
 
-const SidePanel = () => {
+const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
   const { ecosystem } = useContext(EcoSystemContext);
 
   const colors = {
@@ -9,6 +9,13 @@ const SidePanel = () => {
     base: { border: "#0052FE", bg: "#0052FE", text: "white" },
     zora: { border: "#909090", bg: "#909090", text: "white" },
     mode: { border: "#DFFE00", bg: "#DFFE00", text: "black" },
+  };
+
+  const nextPrompt = (e) => {
+    e.stopPropagation();
+    setInputValue("");
+    setResponseText("");
+    setOutputContent("");
   };
 
   return (
@@ -58,8 +65,9 @@ const SidePanel = () => {
       </div>
 
       <div
+        onClick={nextPrompt}
         style={{ backgroundColor: colors[ecosystem].bg }}
-        className="h-[60px] w-[558px] rounded-[20px]"
+        className="h-[60px] w-[558px] rounded-[20px] cursor-pointer"
       >
         <div className="flex flex-row px-[24px] py-[4px] justify-between">
           <div className="flex flex-col gap-[9px]">
