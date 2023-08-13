@@ -57,10 +57,9 @@ const chat = () => {
                 <Loader />
               </div>
             )}
-
+            <p className="text-white h-[55px] mt-[32px]">{responseText}</p>
             {outputContent}
           </div>
-          <p className="text-white">{responseText}</p>
         </div>
         <SidePanel />
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 import Create from "../Templates/Create";
 import Deploy from "../Templates/Deploy";
 import Guide from "../Templates/Guide";
-import None from "../Templates/None"; // Assuming you also want the default case
+import None from "../Templates/None";
 
 const Template = ({ template }) => {
   let component;
