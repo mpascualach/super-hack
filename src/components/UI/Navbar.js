@@ -46,7 +46,7 @@ const Navbar = () => {
                 active === "/chat" ? "gray-500 font-bold" : "[#fff]"
               }`}
             >
-              CHAT
+              AGENT
             </span>
           </Link>
           <Link href="/create">
