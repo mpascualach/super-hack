@@ -27,13 +27,13 @@ const Create = () => {
           <p className="text-[20px] text-black text-opacity-90 mb-[8px]">
             Prompt
           </p>
-          <div className="w-[545px] h-[60px] border border-[#ddd] rounded-[10px] flex flex-row items-center p-[14px] pl-[16px]">
+          <div className="w-[545px] h-[60px] bg-[#fff] rounded-[10px] flex flex-row items-center p-[14px] pl-[16px]">
             <input
               type="text"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               placeholder="Enter a prompt to generate image here"
-              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#f9f9f9]"
+              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#fff]"
               name=""
               id=""
             />
@@ -41,10 +41,11 @@ const Create = () => {
           <p className="text-[20px] text-black text-opacity-90 mt-[24px] mb-[8px]">
             Price
           </p>
-          <div className="w-[545px] h-[60px] border border-[#ddd] rounded-[10px] flex flex-row items-center p-[14px] pl-[16px]">
+          <div className="w-[545px] h-[60px] bg-[#fff] rounded-[10px] flex flex-row items-center p-[14px] pl-[16px]">
             <input
               type="text"
-              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690] bg-[#f9f9f9]"
+              value="0.01"
+              className="w-[450px] h-[20px] text-[16px] focus:outline-none text-[#26262690]  bg-[#fff]"
               name=""
               id=""
             />
@@ -53,7 +54,7 @@ const Create = () => {
             Select chain
           </p>
           <div>
-            <select className="select select-bordered border-[#DDD] rounded-[12px] w-[545px] h-[60px] text-black font-normal text-[16px] focus:outline-none">
+            <select className="select select-bordered border-[#fff] bg-[#fff] rounded-[12px] w-[545px] h-[60px] text-black font-normal text-[16px] focus:outline-none">
               <option selected>Optimism</option>
               <option>Base</option>
               <option>Zora</option>
