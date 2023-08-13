@@ -82,7 +82,7 @@ const chat = () => {
                 <Loader />
               </div>
             )}
-            <p className="text-white h-[55px] mt-[32px]">
+            <p className="text-[24px] text-white h-[55px] mb-[16px] leading-[30px]">
               {getResponseIntroText(responseText)}
             </p>
             {outputContent}
