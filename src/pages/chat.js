@@ -45,6 +45,7 @@ const chat = () => {
 
   const handleKeyPress = async (e) => {
     if (e.key === "Enter") {
+      setOutput("");
       setIsLoading(true);
       // Execute fetch when Enter key is pressed
       const response = await fetch("/api/ai", {
@@ -62,11 +63,32 @@ const chat = () => {
       console.log(responseIntro[responseText]);
     }
   };
+
+  const handleTextareaResize = (event) => {
+    console.log("handleTextareaResize", event);
+    const textarea = event.target;
+    textarea.style.height = "auto"; // Reset the height to measure the actual scrollHeight
+    textarea.style.height = `${textarea.scrollHeight}px`; // Set the height to the actual scrollHeight
+  };
+
+  const fillInputValue = (event) => {
+    // triggered by sidepanel cards
+    console.log("fillInputValue", event);
+    setInputValue(event);
+
+    const textArea = document.getElementById("textarea");
+    if (textArea) {
+      textArea.value = event;
+      const inputEvent = new Event("input", { bubbles: true });
+      textarea.dispatchEvent(inputEvent);
+    }
+  };
+
   return (
     <Layout theme="chat" className="h-full w-full overflow-hidden">
-      <div className="flex flex-row min-h-[852px] pt-[40px] text-[#D1D2D3]">
+      <div className="flex flex-row min-h-[852px] text-[#D1D2D3]">
         <div className="flex flex-col w-9/12 pr-[40px] pl-[40px]">
-          <input
+          {/* <input
             value={inputValue}
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
@@ -75,7 +97,17 @@ const chat = () => {
             placeholder="What may I do for you?"
             name=""
             id=""
-          />
+          /> */}
+          <textarea
+            id="textarea"
+            rows={1}
+            value={inputValue}
+            onChange={handleInputChange}
+            onKeyDown={handleKeyPress}
+            onInput={handleTextareaResize}
+            placeholder="What may I do for you?"
+            className="h-[54px] overflow-y-auto resize-none bg-transparent border-b-2 border-[#F1F1F1] focus:outline-none text-[32px] font-medium mb-[24px]"
+          ></textarea>
           <div className="output">
             {isLoading && (
               <div className="flex flex-row justify-center items-center">
@@ -89,7 +121,7 @@ const chat = () => {
           </div>
         </div>
         <SidePanel
-          setInputValue={setInputValue}
+          setInputValue={fillInputValue}
           setResponseText={setResponseText}
           setOutputContent={setOutputContent}
         />
