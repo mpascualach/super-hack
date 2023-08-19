@@ -31,31 +31,22 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
   ];
 
   return (
-    <div className="flex flex-col gap-[24px] h-[650px] overflow-scroll">
+    <div className="flex flex-col gap-[24px] h-[650px] overflow-scroll overflow-x-hidden">
       {inputs.map((input, index) => {
         const title = Object.keys(input)[0];
         const message = input[title];
 
         return (
           <div
-            onClick={() => setInputValue(message)} // Set input value on click
+            onClick={() => setInputValue(message)}
             style={{ border: `1px solid ${colors[ecosystem].border}` }}
             className="min-h-[150px] w-100 rounded-[20px] cursor-pointer flex items-center" // added cursor-pointer to indicate it's clickable
             key={index}
           >
             <div className="flex flex-row pl-[24px] pr-[32px] w-full justify-between items-center">
               <div className="flex flex-col gap-[9px]">
-                {/* <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="81"
-                  height="4"
-                  viewBox="0 0 81 4"
-                  fill="none"
-                >
-                  <path d="M0 2H81" stroke="#D9D9D9" strokeWidth="4" />
-                </svg> */}
                 <p style={{ color: "#D9D9D9" }} className="text-[32px]">
-                  {title} {/* Fixed here, replaced {text} with {title} */}
+                  {title}
                 </p>
               </div>
               <img
