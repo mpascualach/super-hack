@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 const Layout = ({ children, theme }) => {
   return (
     <div
-      className="text-black"
+      className="text-black h-full w-full overflow-hidden"
       data-theme={theme === "chat" ? "chat" : "normal"}
     >
       <Navbar />

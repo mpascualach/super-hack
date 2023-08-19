@@ -63,15 +63,15 @@ const chat = () => {
     }
   };
   return (
-    <Layout theme="chat">
-      <div className="flex flex-row gap-[160px] min-h-[852px] pt-[40px] text-[#D1D2D3]">
-        <div className="flex flex-col w-[878px]">
+    <Layout theme="chat" className="h-full w-full overflow-hidden">
+      <div className="flex flex-row min-h-[852px] pt-[40px] text-[#D1D2D3]">
+        <div className="flex flex-col w-9/12 pr-[40px] pl-[40px]">
           <input
             value={inputValue}
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
             type="text"
-            className="w-[878px] h-[54px] overflow-y-auto resize-none bg-transparent border-b-2 border-[#F1F1F1] focus:outline-none text-[32px] font-medium mb-[24px]"
+            className="h-[54px] overflow-y-auto resize-none bg-transparent border-b-2 border-[#F1F1F1] focus:outline-none text-[32px] font-medium mb-[24px]"
             placeholder="What may I do for you?"
             name=""
             id=""

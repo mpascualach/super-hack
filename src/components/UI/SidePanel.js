@@ -31,7 +31,7 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
   ];
 
   return (
-    <div className="flex flex-col gap-[24px]">
+    <div className="flex flex-col gap-[24px] h-[650px] overflow-scroll">
       {inputs.map((input, index) => {
         const title = Object.keys(input)[0];
         const message = input[title];
@@ -40,12 +40,12 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
           <div
             onClick={() => setInputValue(message)} // Set input value on click
             style={{ border: `1px solid ${colors[ecosystem].border}` }}
-            className="h-[180px] w-[558px] rounded-[20px] cursor-pointer" // added cursor-pointer to indicate it's clickable
+            className="min-h-[150px] w-100 rounded-[20px] cursor-pointer flex items-center" // added cursor-pointer to indicate it's clickable
             key={index}
           >
-            <div className="flex flex-row pl-[24px] pt-[44px] pr-[32px] justify-between">
+            <div className="flex flex-row pl-[24px] pr-[32px] w-full justify-between items-center">
               <div className="flex flex-col gap-[9px]">
-                <svg
+                {/* <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="81"
                   height="4"
@@ -53,13 +53,13 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
                   fill="none"
                 >
                   <path d="M0 2H81" stroke="#D9D9D9" strokeWidth="4" />
-                </svg>
+                </svg> */}
                 <p style={{ color: "#D9D9D9" }} className="text-[32px]">
                   {title} {/* Fixed here, replaced {text} with {title} */}
                 </p>
               </div>
               <img
-                className="h-[92px] w-[92px]"
+                className="h-[64px] w-[64px]"
                 src={`/cats/cat${index === 0 ? 5 : index + 1}.svg`}
                 alt=""
               />
@@ -70,7 +70,7 @@ const SidePanel = ({ setInputValue, setResponseText, setOutputContent }) => {
 
       <div
         style={{ border: `1px solid ${colors[ecosystem].border}` }}
-        className="flex flex-col justify-center h-[120px] w-[558px] rounded-[20px]"
+        className="flex flex-col justify-center min-h-[150px] rounded-[20px]"
       >
         <div className="flex flex-row pl-[24px] pr-[32px]">
           <p style={{ color: "#D9D9D9" }} className="text-[32px] w-[426px]">

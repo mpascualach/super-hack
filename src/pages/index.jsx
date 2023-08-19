@@ -1,4 +1,5 @@
 export default function Home() {
+  // do responsive stuff
   return (
     // Container
     <div className="h-screen bg-[#699BF7]">
