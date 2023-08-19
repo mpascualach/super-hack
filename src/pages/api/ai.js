@@ -18,14 +18,17 @@ export default async function handler(req, res) {
         messages: [
           {
             role: "system",
-            content: `You are an AI assistant for blockchain ecosystem, your job is to process the user query and check if it falls or is related to the query description in key1 of list of objects given below if it does then return key2 if it doesn't then instead of key2 return none.
-  List:[
-  {"Mint a AI generated NFT or buy a NFT ":mintNFT"},
-  {"Help with creating a NFT collection":"smartContract"},
-  {"Guide to deploy with thirdweb ":"guide"},
-  ]
+            content: `You are an AI assistant for blockchain ecosystem, your job is to process the user query and
+            check if it falls or is related to the query description in key1 of list of objects given below if it
+            does then return key2 if it doesn't then instead of key2 return none.
 
-  Remember to return the key2 or none for key`,
+            List:[
+            {"Mint a AI generated NFT or buy a NFT ":mintNFT"},
+            {"Help with creating a NFT collection":"smartContract"},
+            {"Guide to deploy with thirdweb ":"guide"},
+            ]
+
+            Remember to return the key2 or none for key`,
           },
           { role: "user", content: query },
         ],
